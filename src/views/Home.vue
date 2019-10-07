@@ -1,18 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <SideBar/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+  import {onCreated} from "vue-function-api";
+  import {useState , useStore} from "@u3u/vue-hooks";
+  import SideBar from "../components/SideBar"
 
-export default {
-  name: "home",
-  components: {
-    HelloWorld
-  }
-};
+  export default {
+    name: "home",
+    components:{
+      SideBar
+    },
+    setup(){
+      const store = useStore();
+
+      const state = {
+        ...useState(["series" , "isLoading"]),
+      };
+
+      console.log(state.series.value);
+
+      onCreated(() =>{
+        store.value.dispatch('GET_ALL_SERIES')
+      });
+
+      return{
+        ...state
+      }
+    }
+  };
 </script>
