@@ -5,6 +5,7 @@ import SerieVideo from './views/SerieVideo';
 import SeriesList from "./views/SeriesList";
 import MovieList from "./views/MovieList";
 import MovieVideo from "./views/MovieVideo";
+import ByGenre from "./views/ByGenre";
 
 Vue.use(Router);
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/MovieVideo/:id',
       name: 'MovieVideo',
       component: MovieVideo,
+    },
+    {
+      path: '/Genre/:genres',
+      name: 'ByGenre',
+      component: ByGenre,
     },
   ]
 });
