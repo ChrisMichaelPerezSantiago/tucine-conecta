@@ -16,8 +16,61 @@ a:hover, a:focus, a:active {
   color: inherit;
 }
 
+.pagination > li > a{
+  background-color: white;
+  color: black;
+}
+.pagination > .active > a{
+  color: white;
+  background-color: #1ed760 !Important;
+  border-color: #ffff
+}
+
+
+
+.search{
+  float:left; width:100%; text-align:center;
+   align-items:center;
+ }
+
+.section-img{
+  border-color: transparent;
+  z-index: 0; 
+  opacity: 0.10; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+
+
+@media (max-width: 768px) {
+  iframe{
+    height: 15em;
+    width: 24.5em;
+  }
+  .latest-release{
+    width: 30em;
+  }
+  .related-characters{
+    width: 50em;
+    font-size: 12px;
+  }
+  .tracks .track__title {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 20ch;
+  }
+  .search{
+    padding-left: 10px;
+  }
+  #copyright{
+    width: 23em;
+  }
+}
+
 .header {
-  background: #282828;
+  background: #181818;
   padding: 10px;
   color: #aaaaaa;
   border-bottom: 1px solid #181818;
@@ -138,17 +191,13 @@ a:hover, a:focus, a:active {
   flex-flow: row wrap;
 }
 
-.content__left {
-  width: 15%;
-}
 
 .content__middle {
-  width: 70%;
+  width: 100%;
+  height: 100%;
 }
 
-.content__right {
-  width: 15%;
-}
+
 
 @media (max-width: 1400px) {
   .content__left {
@@ -156,12 +205,9 @@ a:hover, a:focus, a:active {
   }
 
   .content__middle {
-    width: 80%;
+    width: 100%;
   }
-
-  .content__right {
-    display: none;
-  }
+ 
 }
 
 @media (max-width: 768px) {
@@ -552,11 +598,24 @@ a:hover, a:focus, a:active {
 }
 
 .artist {
-  height: 617px;
   overflow-y: scroll;
 }
 
 .artist__header {
+  border-bottom: 1px solid #282828;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.video__header {
   height: 320px;
   border-bottom: 1px solid #282828;
   position: relative;
@@ -580,9 +639,9 @@ a:hover, a:focus, a:active {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 1;
   opacity: 0.15;
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/g-eazy.png);
+  background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -603,9 +662,7 @@ a:hover, a:focus, a:active {
 }
 
 .artist__header .artist__info .profile__img img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  border-radius: 5%;
 }
 
 .artist__header .artist__info__type {
@@ -1038,40 +1095,7 @@ a:hover, a:focus, a:active {
   color: white;
 }
 
-@media (max-width: 1024px) {
-  .related-artists {
-    flex-flow: row wrap;
-  }
 
-  .related-artists .related-artist {
-    margin: 10px;
-    width: calc((100% / 3) - 20px);
-  }
-}
-
-@media (max-width: 768px) {
-  .related-artists .related-artist {
-    margin: 5px;
-    width: calc((100% / 2) - 10px);
-  }
-}
-
-@media (max-width: 480px) {
-  .related-artists .related-artist {
-    margin: 5px;
-    width: 20%;
-    background: none;
-  }
-
-  .related-artists .related-artist:hover {
-    background: none;
-    opacity: .6;
-  }
-
-  .related-artists .related-artist__name {
-    display: none;
-  }
-}
 
 .overview__albums {
   width: 100%;
@@ -1292,13 +1316,11 @@ a:hover, a:focus, a:active {
   }
 
   .header .search input {
-    width: 100%;
     background-size: 7%;
   }
 
   .header .user {
-    width: 100%;
-    margin-top: 15px;
+    width: 75%;
     justify-content: space-around;
   }
 }

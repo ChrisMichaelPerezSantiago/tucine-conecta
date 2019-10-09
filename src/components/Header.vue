@@ -10,9 +10,11 @@
     <div class="page-flows">
      <div class="user__info">
         <span class="user__info__img">
-          <img src="../../public/logo.png" alt="tu cine conecta" class="img-responsive" />
+          <router-link to="/">
+            <img src="../../public/logo.png" alt="tu cine conecta" class="img-responsive" />
+          </router-link>
         </span>
-    </div>  
+      </div>  
     </div>
 
     <div class="user">
