@@ -15,5 +15,8 @@ export const mutations = {
   },
   [type.SET_VIDEO_MOVIES](state , payload){
     state.movie_video = payload;
+  },
+  [type.SET_GENRES](state , payload){
+    state.genres = payload;
   }
 };
