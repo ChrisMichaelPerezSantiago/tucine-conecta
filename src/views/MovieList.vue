@@ -43,8 +43,8 @@
                                       </div>
 
                                       <div class="album__info__meta">
-                                          <div class="album__year">LISTADO DE SERIES</div>
-                                          <div class="album__name">Lo último en el mundo de las series</div>
+                                          <div class="album__year">LISTADO DE PELÍCULAS</div>
+                                          <div class="album__name">Lo último en el mundo de las películas</div>
                                       </div>
                                     </div>
 
