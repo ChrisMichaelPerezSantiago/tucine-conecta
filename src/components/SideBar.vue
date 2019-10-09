@@ -40,3 +40,9 @@
     <router-link class="related-artist" :to="{name: 'ByGenre' , params:{genres:'western'}}">western</router-link>
   </div>    
 </template>
+
+<script>
+  export default {
+    name: 'SideBar'
+  }
+</script>
