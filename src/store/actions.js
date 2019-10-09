@@ -29,7 +29,6 @@ export const actions = {
   GET_VIDEO_MOVIES({commit} , id){
     api.getMovieVideos(id)
       .then(doc =>{
-        console.log('video: ' , doc)
         commit(type.SET_VIDEO_MOVIES , doc.video_iframe)
         setTimeout(() => {
           commit(type.IS_LOADING , false)
@@ -41,11 +40,21 @@ export const actions = {
   GET_VIDEO_SERIES({commit} , id){
     api.getSerieVideos(id)
       .then(doc =>{
-        console.log('video: ' , doc)
         commit(type.SET_VIDEO_SERIES , doc.video_iframe)
         setTimeout(() => {
           commit(type.IS_LOADING , false)
         } , 1000)
+      }).catch(err =>{
+        console.error(err);
+      });
+  },
+  GET_GENRES({commit} , info){
+    api.getAllGenres(info)
+      .then(doc =>{
+        commit(type.SET_GENRES , doc.content);
+        setTimeout(() =>{
+          commit(type.IS_LOADING , false);
+        } , 1000);
       }).catch(err =>{
         console.error(err);
       });
