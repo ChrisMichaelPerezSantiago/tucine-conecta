@@ -20,6 +20,10 @@ class API extends SingletonClass{
   async getMovieVideos(id){
     return this.get(`video_movie/${id}`);
   };
+
+  async getAllGenres(info){
+    return this.get(`genres/${info.genre}/${info.page}`);
+  };
 }
 
 export default API;
