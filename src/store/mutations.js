@@ -21,5 +21,8 @@ export const mutations = {
   },
   [type.SET_EPISODES](state , payload){
     state.episodes = payload;
-  }
+  },
+  [type.SET_SEARCH](state , payload) {
+    state.contentSearched = payload;
+  },
 };
