@@ -25,16 +25,19 @@
         <i class="ion-archive"></i>
       </div>-->
 
+    <!--
       <div class="user__info">
         <div class="search">
-          <input type="text" placeholder="Buscar peliculas, series …" />
+          <input @click.prevent="goto()" v-model="query" type="text" placeholder="Buscar peliculas, series …" />
         </div>
         <span class="user__info__name">
           <span class="first"></span>
           <span class="last"></span>
         </span>
       </div>
+    -->
 
+    <!--
       <div class="user__actions">
         <div class="dropdown">
           <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -47,8 +50,37 @@
             <li><a href="#">Log Out</a></li>
           </ul>
         </div>
-      </div>
+      </div>-->
     </div>
 
   </section>
 </template>
+
+
+<script>
+  import {value} from 'vue-function-api';
+  import {useRouter} from '@u3u/vue-hooks';
+
+  export default {
+    name: "NavBar",
+    setup(){
+      const {router} = useRouter();
+      const query = value("");
+
+      let show = value(false);
+      const toggleNavbar = () => show.value = !show.value;      
+      
+      const goto = () =>{
+        let to = {name: 'ContentSearched' , params:{query: query}}
+        router.push(to);
+      };
+        
+      return{
+        show,
+        toggleNavbar,
+        goto,
+        query
+      }
+    }
+  }
+</script>
