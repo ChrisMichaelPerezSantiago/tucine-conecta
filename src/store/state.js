@@ -3,6 +3,7 @@ export const state = {
   movies: [],
   genres: [],
   episodes: [],
+  contentSearched: [],
   movie_video: [],
   video_series: [],
   isLoading: true
