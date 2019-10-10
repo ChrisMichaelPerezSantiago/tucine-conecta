@@ -27,6 +27,11 @@
                       <router-link :to="{name: 'EpisodesList'}">Episodios</router-link>
                     </a>
                   </li>
+                   <li role="presentation">
+                    <a data-toggle="tab">
+                      <router-link :to="{name: 'ContentSearched'}">Buscador</router-link>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
