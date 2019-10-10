@@ -70,4 +70,15 @@ export const actions = {
         console.log(err);
     });
   },
+  GET_CONTENT_SEARCH({commit} , query){
+    api.search(query)
+      .then(doc =>{
+        commit(type.SET_SEARCH , doc.content);
+        setTimeout(() => {
+          commit(type.IS_LOADING , false);
+        } , 1000);
+      }).catch(err =>{
+        console.log(err);
+      });
+  }, 
 };
