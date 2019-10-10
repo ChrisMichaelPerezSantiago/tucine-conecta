@@ -18,5 +18,8 @@ export const mutations = {
   },
   [type.SET_GENRES](state , payload){
     state.genres = payload;
+  },
+  [type.SET_EPISODES](state , payload){
+    state.episodes = payload;
   }
 };
