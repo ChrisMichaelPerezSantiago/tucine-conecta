@@ -22,6 +22,11 @@
                       <router-link :to="{name: 'MovieList'}">Películas</router-link>
                     </a>
                   </li>
+                    <li role="presentation">
+                    <a data-toggle="tab">
+                      <router-link :to="{name: 'EpisodesList'}">Episodios</router-link>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -55,7 +60,7 @@
                                             <span class="sr-only">Loading...</span>
                                         </div>
                                     </div>
-                                    <div v-else class="tracks" v-for="(serie, index) in series" :key="index">
+                                    <div v-else class="tracks" v-for="(serie, index) in series.slice(0 , 20)" :key="index">
                                         <Series :series="serie" :indexing="index" />
                                     </div>
                                 </div>
