@@ -12,14 +12,18 @@
             <div class="artist__info__type">Serie</div>
             <div class="artist__info__name">{{title}}</div>
             <div class="artist__info__actions">
+              <!--
               <button class="button-dark">
                 <i class="ion-ios-play"></i>
                 Play
               </button>
+              -->
               <a :href="'https://www.imdb.com/find?ref_=nv_sr_fn&q=' + title + '&s=all'"> <button class="button-light">IMDb</button></a>
+              <!--
               <button class="button-light more">
                 <i class="ion-ios-more"></i>
               </button>
+              -->
             </div>
             
           </div>
