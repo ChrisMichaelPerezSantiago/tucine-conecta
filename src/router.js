@@ -8,6 +8,7 @@ import MovieVideo from "./views/MovieVideo";
 import ByGenre from "./views/ByGenre";
 import EpisodesList from "./views/EpisodesList";
 import EpisodeVideo from './views/EpisodeVideo';
+import ContentSearched from './views/ContentSearched';
 
 
 Vue.use(Router);
@@ -55,6 +56,11 @@ export default new Router({
       path: "/EpisodeVideo/:id",
       name: "EpisodeVideo",
       component: EpisodeVideo
-    }
+    },
+    {
+      path: "/search",
+      name: "ContentSearched",
+      component: ContentSearched
+    },
   ]
 });
