@@ -22,6 +22,11 @@
                       <router-link :to="{name: 'MovieList'}">Películas</router-link>
                     </a>
                   </li>
+                    <li role="presentation">
+                    <a data-toggle="tab">
+                      <router-link :to="{name: 'EpisodesList'}">Episodios</router-link>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -72,6 +77,49 @@
                                 <div class="overview__related">
                                     <div class="section-title">Generos</div>
                                     <SideBar/>
+                                </div>
+
+                                      <div class="overview__albums">
+                                  <div class="overview__albums__head">
+                                     
+                                  </div>
+                                  <div class="album">
+                                    <div class="album__info">
+                                      <div class="album__info__art">
+                                        <img class="section-img" 
+                                          src="../assets/img/background.jpg"
+                                        />
+                                      </div>
+                                      <div class="album__info__meta">
+                                        <div class="album__year">EPISODIOS MAS RECIENTES</div>
+                                        <div class="album__name">Descubre los últimos episodios</div>
+                                        <div class="album__actions">
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                        <div class="album__tracks">
+                                            <div class="tracks">
+                                                <div class="tracks__heading">
+                                                    <div class="tracks__heading__length">
+                                                    </div>
+
+                                                    <div class="tracks__heading__popularity">
+                                                        <i class="ion-thumbsup"></i>
+                                                    </div>
+                                                </div>
+
+                                                      
+                                                  <div class="tracks" v-for="(eps, index) in episodes" :key="index">
+                                                    <Episodes :episodes="eps" :indexing="index" />
+                                                  </div>
+                                                <router-link :to="{name: 'EpisodesList'}">
+                                                  <button class="button-light save">ver más</button>
+                                                </router-link>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
 
@@ -136,19 +184,22 @@
   import SideBar from "../components/SideBar";
   import Series from "../components/Series";
   import Movie from "../components/Movie";
+  import Episodes from "../components/Episodes";
+
 
   export default {
     name: "home",
     components:{
       SideBar,
       Series,
-      Movie
+      Movie,
+      Episodes
     },
     setup(){
       const store = useStore();
 
       const state = {
-        ...useState(["series" , "movies" , "isLoading"]),
+        ...useState(["series" , "movies" , "episodes" , "isLoading"]),
       };
 
       const values = {
@@ -159,6 +210,7 @@
       onCreated(() =>{
         store.value.dispatch('GET_ALL_SERIES' , values.page.value);
         store.value.dispatch('GET_ALL_MOVIES' , values.page.value);
+        store.value.dispatch('GET_EPISODES' ,  values.page.value)
       });
 
       return{
