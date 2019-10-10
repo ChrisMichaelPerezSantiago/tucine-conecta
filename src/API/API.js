@@ -24,6 +24,10 @@ class API extends SingletonClass{
   async getAllGenres(info){
     return this.get(`genres/${info.genre}/${info.page}`);
   };
+
+  async getAllLatestEpisodes(page){
+    return this.get(`episodes/${page}`);
+  };
 }
 
 export default API;
