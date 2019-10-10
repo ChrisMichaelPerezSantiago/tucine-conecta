@@ -58,5 +58,16 @@ export const actions = {
       }).catch(err =>{
         console.error(err);
       });
-  }
+  },
+  GET_EPISODES({commit} , page){
+    api.getAllLatestEpisodes(page)
+      .then(doc =>{
+        commit(type.SET_EPISODES , doc.episodes);
+        setTimeout(() =>{
+          commit(type.IS_LOADING , false);
+        } , 1000);
+      }).catch(err =>{
+        console.log(err);
+    });
+  },
 };
