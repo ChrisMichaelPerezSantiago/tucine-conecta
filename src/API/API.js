@@ -28,6 +28,10 @@ class API extends SingletonClass{
   async getAllLatestEpisodes(page){
     return this.get(`episodes/${page}`);
   };
+
+  async search(query){
+    return this.get(`search/${query}`);
+  }
 }
 
 export default API;
