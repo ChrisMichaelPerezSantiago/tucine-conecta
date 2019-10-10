@@ -6,6 +6,9 @@ import SeriesList from "./views/SeriesList";
 import MovieList from "./views/MovieList";
 import MovieVideo from "./views/MovieVideo";
 import ByGenre from "./views/ByGenre";
+import EpisodesList from "./views/EpisodesList";
+import EpisodeVideo from './views/EpisodeVideo';
+
 
 Vue.use(Router);
 
@@ -43,5 +46,15 @@ export default new Router({
       name: 'ByGenre',
       component: ByGenre,
     },
+    {
+      path: '/Episodes',
+      name: 'EpisodesList',
+      component: EpisodesList
+    },
+    {
+      path: "/EpisodeVideo/:id",
+      name: "EpisodeVideo",
+      component: EpisodeVideo
+    }
   ]
 });
