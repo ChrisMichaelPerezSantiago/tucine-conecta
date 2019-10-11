@@ -1,4 +1,6 @@
 'use strict'
+/* global __static */
+
 
 import path from 'path'
 import { app, protocol, BrowserWindow } from 'electron'
