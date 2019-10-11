@@ -1,6 +1,8 @@
 'use strict'
 
+import path from 'path'
 import { app, protocol, BrowserWindow } from 'electron'
+import { autoUpdater } from "electron-updater"
 import {
   createProtocol,
   installVueDevtools
@@ -17,7 +19,8 @@ protocol.registerSchemesAsPrivileged([{scheme: 'app', privileges: { secure: true
 function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({ width: 1300, height: 800, webPreferences: {
-    nodeIntegration: true
+    nodeIntegration: true,
+    icon: path.join(__static, 'logo.png')
   } })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
@@ -27,7 +30,9 @@ function createWindow () {
   } else {
     createProtocol('app')
     // Load the index.html when not in development
-    win.loadURL('app://./index.html')
+    win.loadURL('app://./index.html');
+
+    autoUpdater.checkForUpdatesAndNotify();
   }
 
   win.on('closed', () => {
