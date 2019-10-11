@@ -25,8 +25,6 @@ module.exports = {
             owner: "ChrisMichaelPerezSantiago",
             repo: "tucine-conecta",
             releaseType: "draft",
-            channel: "",
-            url: ""
           }
         ]
       }
