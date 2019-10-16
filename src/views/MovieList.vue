@@ -117,7 +117,7 @@
       };
 
       const movies_page = value(1);
-      const movies_total_pages = value(111);
+      const movies_total_pages = value(112);
 
       watch(() =>
         movies_page.value , (value) =>{
